@@ -73,7 +73,7 @@ public class project {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("scores.ser"))) {
             scores = (HashMap<String, Integer>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            // Handle file not found or deserialization error
+        
         }
 
  
@@ -84,7 +84,7 @@ public class project {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("scores.ser"))) {
             oos.writeObject(scores);
         } catch (IOException e) {
-            // Handle file write error
+        
         }
     }
 }
