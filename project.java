@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
+/* asks user riddles and keeps score */
 public class project {
     static final int MAX_USERS = 10;
     static final int NUM_RIDDLES = 10;
