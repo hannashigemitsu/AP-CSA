@@ -65,3 +65,11 @@ public class project {
 
         return scores;
     }
+    public static void saveScores(Map<String, Integer> scores) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("scores.ser"))) {
+            oos.writeObject(scores);
+        } catch (IOException e) {
+            // Handle file write error
+        }
+    }
+}
