@@ -1,4 +1,6 @@
-import java.util.Arrays;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class project {
@@ -16,31 +18,16 @@ public class project {
     };
 
     public static void main(String[] args) {
-        String[] usernames = new String[MAX_USERS];
-        int[] scores = new int[MAX_USERS];
-        int userCount = 0;
+        Map<String, Integer> scores = loadScores();
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter your username: ");
         String username = scanner.nextLine();
 
-        int userIndex = findUserIndex(username, usernames, userCount);
-        int score = 0;
+        int score = scores.getOrDefault(username, 0);
 
-        if (userIndex != -1) {
-            score = scores[userIndex];
-            System.out.println("Welcome back, " + username + "! Your previous score is: " + score);
-        } else {
-            if (userCount == MAX_USERS) {
-                System.out.println("Sorry, maximum number of users reached.");
-                return;
-            }
-            userIndex = userCount;
-            usernames[userIndex] = username;
-            userCount++;
-            System.out.println("Hello, " + username + "! Your score is: " + score);
-        }
+        System.out.println("Welcome back, " + username + "! Your previous score is: " + score);
 
         for (int i = 0; i < NUM_RIDDLES; i++) {
             System.out.println("Riddle " + (i + 1) + ":");
@@ -57,16 +44,9 @@ public class project {
             }
         }
 
-        scores[userIndex] = score;
+        scores.put(username, score);
+        saveScores(scores);
+
         System.out.println("Game over. Your final score is: " + score);
     }
 
-    public static int findUserIndex(String username, String[] usernames, int userCount) {
-        for (int i = 0; i < userCount; i++) {
-            if (username.equals(usernames[i])) {
-                return i;
-            }
-        }
-        return -1;
-    }
-}
