@@ -15,7 +15,8 @@ public class project {
             "What creature is smarter than a talking parrot?",
             "How does a bee get to school?",
             "Why are As like flowers?",
-            "What do you a snail on a ship?"
+            "What do you a snail on a ship?",
+            "What kind of room has no doors or windows?"
 
     };
     static final String[] answers = {
@@ -27,7 +28,8 @@ public class project {
             "a spelling bee",
             "on a buzz",
             "because Bs come after them",
-            "a snailor"
+            "a snailor",
+            "a mushroom"
     };
 
     public static void main(String[] args) {
