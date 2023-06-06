@@ -50,3 +50,18 @@ public class project {
         System.out.println("Game over. Your final score is: " + score);
     }
 
+    public static Map<String, Integer> loadScores() {
+        Map<String, Integer> scores = new HashMap<>();
+
+ 
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("scores.ser"))) {
+            scores = (HashMap<String, Integer>) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            // Handle file not found or deserialization error
+        }
+
+ 
+
+        return scores;
+    }
