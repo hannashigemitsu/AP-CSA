@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class project {
     static final int MAX_USERS = 20;
-    static final int NUM_RIDDLES = 3;
+    static final int NUM_RIDDLES = 10;
     static final String[] riddles = {
             "What are two things you can never eat for breakfast?",
             "The more you take, the more you leave behind, what are they?",
