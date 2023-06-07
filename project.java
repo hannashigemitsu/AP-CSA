@@ -29,3 +29,34 @@ public class project {
             "a snailor",
             "a mushroom"
     };
+
+    public static void main(String[] args) {
+        Map<String, Integer> scores = new HashMap<>();
+
+ 
+
+        Scanner scanner = new Scanner(System.in);
+
+ 
+
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+
+ 
+
+        int score = scores.getOrDefault(username, 0);
+
+ 
+
+        System.out.println("Welcome back, " + username + "! Your previous score is: " + score);
+
+ 
+
+        for (int i = 0; i < NUM_RIDDLES; i++) {
+            System.out.println("Riddle " + (i + 1) + ":");
+            System.out.println(riddles[i]);
+
+ 
+
+            System.out.print("Your answer: ");
+            String answer = scanner.nextLine();
