@@ -60,3 +60,48 @@ public class project {
 
             System.out.print("Your answer: ");
             String answer = scanner.nextLine();
+
+            switch (i) {
+                case 0:
+                    if (answer.equalsIgnoreCase(answers[i])) {
+                        score++;
+                        System.out.println("Correct! You earned 1 point.");
+                    } else {
+                        System.out.println("Wrong answer. Moving on to the next riddle.");
+                    }
+                    break;
+                case 1:
+                    if (answer.equalsIgnoreCase(answers[i])) {
+                        score++;
+                        System.out.println("Correct! You earned 1 point.");
+                    } else {
+                        System.out.println("Wrong answer. Moving on to the next riddle.");
+                    }
+                    break;
+                case 2:
+                    if (answer.equalsIgnoreCase(answers[i])) {
+                        score++;
+                        System.out.println("Correct! You earned 1 point.");
+                    } else {
+                        System.out.println("Wrong answer. Moving on to the next riddle.");
+                    }
+                    break;
+            }
+        }
+
+ 
+
+        scores.put(username, score);
+
+ 
+
+        if (scores.size() > MAX_USERS) {
+            String oldestUser = scores.keySet().iterator().next();
+            scores.remove(oldestUser);
+        }
+
+ 
+
+        System.out.println("Game over. Your final score is: " + score);
+    }
+}
