@@ -30,3 +30,37 @@ public class projecttest {
             "a snailor",
             "a mushroom"
     };
+
+    public static void main(String[] args) {
+        Map<String, Integer> scores = new HashMap<>();
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+
+        int score = 0;
+        if (scores.containsKey(username)) {
+            score = scores.get(username);
+            System.out.println("Welcome back, " + username + "! Your previous score is: " + score);
+        }
+
+        for (int i = 0; i < NUM_RIDDLES; i++) {
+            System.out.println("Riddle " + (i + 1) + ":");
+            System.out.println(riddles[i]);
+
+            System.out.print("Your answer: ");
+            String answer = scanner.nextLine();
+
+            if (answer.equalsIgnoreCase(answers[i])) {
+                score++;
+                System.out.println("Correct! You earned 1 point.");
+            } else {
+                if (score > 0) {
+                    score--;
+                    System.out.println("Wrong answer. 1 point deducted.");
+                } else {
+                    System.out.println("Wrong answer. You have zero points.");
+                }
+            }
+        }
