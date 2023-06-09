@@ -1,8 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner; 
+import java.util.Scanner;
 
-public class project {
+
+public class projecttest {
     static final int MAX_USERS = 20;
     static final int NUM_RIDDLES = 10;
     static final String[] riddles = {
@@ -14,7 +15,7 @@ public class project {
             "What creature is smarter than a talking parrot?",
             "How does a bee get to school?",
             "Why are As like flowers?",
-            "What do you a snail on a ship?",
+            "What do you call a snail on a ship?",
             "What kind of room has no doors or windows?"
     };
     static final String[] answers = {
@@ -29,55 +30,3 @@ public class project {
             "a snailor",
             "a mushroom"
     };
-
-    public static void main(String[] args) {
-        Map<String, Integer> scores = new HashMap<>();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your username: ");
-        String username = scanner.nextLine();
-        int score = scores.getOrDefault(username, 0);
-        System.out.println("Hello, " + username + "! Your previous score is: " + score);
-
-        for (int i = 0; i < NUM_RIDDLES; i++) {
-            System.out.println("Riddle " + (i + 1) + ":");
-            System.out.println(riddles[i]);
-            System.out.print("Your answer: ");
-            String answer = scanner.nextLine();
-            switch (i) {
-                case 0:
-                    if (answer.equalsIgnoreCase(answers[i])) {
-                        score++;
-                        System.out.println("Correct! You earned 1 point.");
-                    } else {
-                        System.out.println("Wrong answer. Moving on to the next riddle.");
-                    }
-                    break;
-                case 1:
-                    if (answer.equalsIgnoreCase(answers[i])) {
-                        score++;
-                        System.out.println("Correct! You earned 1 point.");
-                    } else {
-                        System.out.println("Wrong answer. Moving on to the next riddle.");
-                    }
-                    break;
-                case 2:
-                    if (answer.equalsIgnoreCase(answers[i])) {
-                        score++;
-                        System.out.println("Correct! You earned 1 point.");
-                    } else {
-                        System.out.println("Wrong answer. Moving on to the next riddle.");
-                    }
-                    break;
-            }
-        }
-
-        scores.put(username, score);
-
-        if (scores.size() > MAX_USERS) {
-            String oldestUser = scores.keySet().iterator().next();
-            scores.remove(oldestUser);
-        }
-        
-        System.out.println("Game over. Your final score is: " + score);
-    }
-}
