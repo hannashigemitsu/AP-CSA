@@ -64,3 +64,110 @@ public class projecttest {
                 }
             }
         }
+        scores.put(username, score);
+
+
+
+
+        if (scores.size() > MAX_USERS) {
+
+            String oldestUser = scores.keySet().iterator().next();
+
+            scores.remove(oldestUser);
+
+        }
+
+
+
+
+        System.out.println("Game over. Your final score is: " + score);
+
+
+
+
+        if (score > 0) {
+
+            drawHeart(score);
+
+        }
+
+    }
+
+
+
+
+    static void drawHeart(int size) {
+
+        switch (size) {
+
+            case 1:
+
+                System.out.println("<3");
+
+                break;
+
+            case 2:
+
+                System.out.println("<3 <3");
+
+                break;
+
+            case 3:
+
+                System.out.println("<3 <3 <3");
+
+                break;
+
+            case 4:
+
+                System.out.println("<3 <3 <3 <3");
+
+                break;
+
+            case 5:
+
+                System.out.println("<3 <3 <3 <3 <3");
+
+                break;
+
+            case 6:
+
+                System.out.println("<3 <3 <3 <3 <3 <3");
+
+                break;
+
+            case 7:
+
+                System.out.println("<3 <3 <3 <3 <3 <3 <3");
+
+                break;
+
+            case 8:
+
+                System.out.println("<3 <3 <3 <3 <3 <3 <3 <3");
+
+                break;
+
+            case 9:
+
+                System.out.println("<3 <3 <3 <3 <3 <3 <3 <3 <3");
+
+                break;
+
+            case 10:
+
+                System.out.println("<3 <3 <3 <3 <3 <3 <3 <3 <3 <3");
+
+                break;
+
+            default:
+
+                System.out.println("</3");
+
+                break;
+
+        }
+
+    }
+
+}
