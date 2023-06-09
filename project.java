@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 
-public class projecttest {
+public class project {
     static final int MAX_USERS = 20;
     static final int NUM_RIDDLES = 10;
     static final String[] riddles = {
